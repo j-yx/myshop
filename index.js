@@ -121,10 +121,10 @@ const signTask = () => {
     }, Math.random() * 10 * 60 * 1000)
   })
 }
-// setTimeout(() => {
-//   hacpaiSignRequest(); //签到函数
-// }, Math.random() * 11 * 60 * 1000)
+setTimeout(() => {
+  hacpaiSignRequest(); //签到函数
+}, Math.random() * 10 * 60)
 
 //开始执行任务
 console.log(`开始执行任务-${getNowTime('toLocaleString')}`);
-signTask();
+// signTask();
