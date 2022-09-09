@@ -3,6 +3,8 @@ const axios = require("axios");
 const schedule = require("node-schedule");
 //相关参数保存在文件内
 const { nuggets, pushPlus } = require("./config");
+const pushMsg = require('./inform')
+const JdAll = require('./jdSign')
 
 const getNowTime = (key) => {
   let nowTime = ``;
@@ -15,27 +17,6 @@ const getNowTime = (key) => {
   return nowTime;
 }
 
-const pushMsg = async (title, content) => {
-  console.log(`\n------${getNowTime(`toLocaleString`)} 开始推送wx消息 ------`);
-  //获取配置参数
-  const { url, token } = pushPlus;
-  const res = await axios({
-    url,
-    method: `get`,
-    params: {
-      token,
-      template: `json`,
-      title,
-      content,
-    }
-  });
-  if (res && res.data) {
-    console.log(`\n ${JSON.stringify(res.data)} \n\n------ ${getNowTime(`toLocaleTimeString`)} 推送成功 ------\n`);
-  } else {
-    console.log(res);
-    console.log(`\n------ ${getNowTime(`toLocaleTimeString`)} 推送失败 ------ \n`);
-  }
-}
 
 /**
  * 掘金自动签到 请求方法
@@ -113,18 +94,19 @@ const luckDraw = async () => {
 }
 
 //定时触发任务
-const signTask = () => {
-  //每天在6:00-6:10随机签到
-  schedule.scheduleJob("0 0 11 * * *", () => {
-    setTimeout(() => {
-      hacpaiSignRequest(); //签到函数
-    }, Math.random() * 10 * 60 * 1000)
-  })
-}
+// const signTask = () => {
+//   //每天在6:00-6:10随机签到
+//   schedule.scheduleJob("0 0 11 * * *", () => {
+//     setTimeout(() => {
+//       hacpaiSignRequest(); //签到函数
+//     }, Math.random() * 10 * 60 * 1000)
+//   })
+// }
 setTimeout(() => {
   hacpaiSignRequest(); //签到函数
-}, Math.random() * 10 * 60)
-
+  JdAll(nuggets.jdHeaders.Cookie)
+}, Math.random() * 11 * 60 * 1000)
+// console.log(JdAll)
 //开始执行任务
 console.log(`开始执行任务-${getNowTime('toLocaleString')}`);
 // signTask();
