@@ -20,5 +20,5 @@ module.exports = {
   pushPlus: {
     url: `http://www.pushplus.plus/send`, //微信推送URL
     token: `4661b314662d4ffbb68cba10283aaf57`, //这是免费的
-  },
+  },  
 }
