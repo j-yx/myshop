@@ -18,9 +18,9 @@ module.exports = {
   },
   //消息推送相关参数 关注pushplus微信公众号可以获得一对一推送的调用参数，不是推广
   pushPlus: {
-    url: `http://www.pushplus.plus/send`, //微信推送URL
+    url: `http://www.pushplus.plus/send`, //微信推送URL1
     token: `4661b314662d4ffbb68cba10283aaf57`, //这是免费的
   },  
 }
-
+   
 
