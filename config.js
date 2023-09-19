@@ -1,6 +1,6 @@
 //查询今日是否签到成功接口 个 https://api.juejin.cn/growth_api/v1/get_today_status
 module.exports = {
-  //掘金相关参数哈哈哈哈
+  //掘金相关参数哈哈哈哈1
   nuggets: {
     signInUrl: `https://api.juejin.cn/growth_api/v1/check_in`, //签到接口
     freeCheckUrl: `https://api.juejin.cn/growth_api/v1/lottery_config/get`, //免费抽奖次数查询
