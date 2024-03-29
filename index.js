@@ -1,7 +1,7 @@
 
 const axios = require("axios");
 const schedule = require("node-schedule");
-//相关参数保存在文件内
+//相关参数保存在文件内  1111
 const { nuggets, pushPlus } = require("./config");
 const pushMsg = require('./inform')
 const JdAll = require('./jdSign')
