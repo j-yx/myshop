@@ -5,7 +5,7 @@ const getNowTime = (key) => {
     try {
       nowTime = new Date()[key]();
     } catch (e) {
-      nowTime = `获取时间函数错误！`;
+      nowTime = `获取时间函数错误2！`;
       console.error(`请传入日期函数 —— ${e}`);
     }
     return nowTime;
