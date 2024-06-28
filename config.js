@@ -1,4 +1,4 @@
-//查询今日是否签到成功接口 个 https://api.juejin.cn/growth_api/v1/get_today_status
+ //查询今日是否签到成功接口 个 https://api.juejin.cn/growth_api/v1/get_today_status
 module.exports = { 
   //掘金相关参数哈哈哈哈1111
   nuggets: {
